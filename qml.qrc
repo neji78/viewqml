@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Poem.qml</file>
+        <file>UInput.qml</file>
+        <file>Logo.qml</file>
+        <file>FText.qml</file>
+        <file>DoubleButton.qml</file>
+        <file>SigninPage.qml</file>
+        <file>SignupPage.qml</file>
+        <file>RToolBar.qml</file>
+        <file>CRect.qml</file>
+        <file>DoubleText.qml</file>
+        <file>HomePage.qml</file>
+        <file>SettingPage.qml</file>
+        <file>DataRect.qml</file>
+        <file>WOfferdRect.qml</file>
+        <file>WListRect.qml</file>
+        <file>GButtons.qml</file>
+    </qresource>
+    <qresource prefix="/pic">
+        <file>back.jpg</file>
+    </qresource>
+</RCC>
