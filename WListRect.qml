@@ -3,9 +3,8 @@ import QtQuick 2.0
 import QtQml.Models 2.3
 
 Rectangle {
-    id:main_rect
     anchors.fill:parent
-    signal clicked_(string data);
+    signal clicked_bar(bool flag);
     DelegateModel {
         id: visualModel
         model: ListModel {
@@ -29,7 +28,7 @@ Rectangle {
                     anchors.fill:parent
                     hoverEnabled: true
                     onClicked: {
-                        main_rect.clicked_(name)
+                        clicked_bar(true)
                     }
                 }
             }

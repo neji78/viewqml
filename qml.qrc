@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/main">
         <file>main.qml</file>
         <file>Poem.qml</file>
         <file>UInput.qml</file>
@@ -7,7 +7,6 @@
         <file>FText.qml</file>
         <file>DoubleButton.qml</file>
         <file>SigninPage.qml</file>
-        <file>SignupPage.qml</file>
         <file>RToolBar.qml</file>
         <file>CRect.qml</file>
         <file>DoubleText.qml</file>
@@ -20,5 +19,9 @@
     </qresource>
     <qresource prefix="/pic">
         <file>back.jpg</file>
+    </qresource>
+    <qresource prefix="/signup">
+        <file>SignupPage.qml</file>
+        <file>TFtext.qml</file>
     </qresource>
 </RCC>

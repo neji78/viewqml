@@ -18,7 +18,7 @@ Window {
         id:uinput
         width: 400
         onSign_up: {
-            sign_in_pageLoader.source = "SignupPage.qml"
+            sign_in_pageLoader.source = "/signup/SignupPage.qml"
 
         }
         onSign_in: {

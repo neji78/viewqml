@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        qclock.cpp
+        qclock.cpp \
+        qsignup.cpp
 
 RESOURCES += qml.qrc
 
@@ -31,4 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    qclock.h
+    qclock.h \
+    qsignup.h
+
+DISTFILES +=

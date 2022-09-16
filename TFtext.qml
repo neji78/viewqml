@@ -3,35 +3,30 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 
 Rectangle {
-    id:main_rect_
-    property string label_text: "non"
-    property string place_text: "non"
+    width: parent.width - 50
+    height:20
+    property string label_text: "value"
+    property string place_: "value"
     readonly property string field_text: fieldtext.text
-    color: "black"
-    RowLayout {
-        id: layout
-        anchors.fill: main_rect_
-        spacing: 5
-
+    RowLayout{
+        anchors.fill:parent
         Rectangle{
-            id:rect_text
+            id:rect_text_
             Layout.fillHeight: true
-            Layout.preferredWidth:main_rect_.width/2 - 50
+            Layout.preferredWidth:parent.width/2 - 50
             Layout.leftMargin: 5
-            Text {
+            Text{
                 id: fieldname
                 anchors.centerIn: parent
                 font.pointSize: 10
                 text: label_text
-
             }
         }
         TextField{
             id:fieldtext
             Layout.fillHeight: true
-            Layout.preferredWidth:main_rect_.width - rect_text.width
-            placeholderText: place_text
+            Layout.preferredWidth:parent.width - rect_text_.width
+            placeholderText: place_
         }
     }
-
 }

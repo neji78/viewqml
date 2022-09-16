@@ -10,7 +10,6 @@ Rectangle {
     signal add
     signal edit
     signal remove
-
     ColumnLayout{
         anchors.fill:parent
         spacing: 1
@@ -50,16 +49,18 @@ Rectangle {
                     Layout.preferredWidth: parent.width - 100
                     color:"black"
                     WListRect{
-                        onClicked_:{
-                            console.log(data);
-                            gbutton.flag = true;
+                        id:wlistrect
+                        onClicked_bar: {
+                            gbutton.flag = flag
                         }
+
                     }
                 }
                 GButtons{
                     id:gbutton
                     Layout.fillHeight: true
                     Layout.preferredWidth: 100
+
                 }
             }
 

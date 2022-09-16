@@ -4,7 +4,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 
 Rectangle{
-    id:main_rect
+    id:button_2
     property bool flag: false
     DelegateModel {
         id: visualModel
@@ -17,13 +17,9 @@ Rectangle{
             id:compo
             height: 20
             name_:name
-            Component.onCompleted: {
-                if(name_ != "اضافه"){
-                   compo.enabled = main_rect.flag
-                }
-            }
-
+            enabled:do_enable(button_2.flag,name_)
             onClicked_:{
+                /*
                 if(name_ == "اضافه"){
                     add()
                 }
@@ -32,13 +28,19 @@ Rectangle{
                 }
                 if(name_ == "حذف"){
                     remove()
-                }
+                }*/
             }
         }
     }
     ListView {
         anchors.fill: parent
         model: visualModel
+    }
+    function do_enable(flg, name){
+        if(name !== "اضافه")
+            return flg
+        else
+            return true
     }
 
 }
