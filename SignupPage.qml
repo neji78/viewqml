@@ -6,12 +6,17 @@ import "qrc:/main/"
 Rectangle {
     id:sigup_rect
     anchors.fill:parent
-    color: "green"
+    color: "#fcef80"
     property var ui_data: rtd.get_ui_data()
     signal exit_
     SUP{
         id:rtd
     }
+    Title{
+        id:signup_title
+        title_text: "اومدی اسم بنویسی"
+    }
+
 
     DelegateModel {
         id: signup_model
@@ -19,14 +24,16 @@ Rectangle {
         delegate: TFtext{
             label_text: ui_data[index]
             place_: ui_data[index] + " خود را وارد کنید"
+            color_:"#d65253"
         }
     }
     Rectangle{
-        id:rec_right
-        anchors.top: parent.top
+        anchors.top: signup_title.bottom
         anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottom: parent.bottom
-        width:parent.width - 200
+        anchors.bottomMargin: 200
+        color: "#F9A72B"
         ListView {
             id:lst_view
             anchors.fill: parent
@@ -34,13 +41,52 @@ Rectangle {
             model: signup_model
         }
     }
+
+    /*
+    Rectangle{
+        id:rec_right
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        width:parent.width - 200
+        color: "#F9A72B"
+        Rectangle{
+            width:300
+            height: 300
+            anchors.centerIn: parent
+            /*
+            Image{
+                source: "/pic/src/sgn.jpg"
+                anchors.fill:parent
+            }
+        }
+    }
     Rectangle{
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.left:rec_right.right
-        color: parent.color
+        //color: parent.color
+        /*
+        Cloud{
+            anchors.fill:parent
+        }
+        Rectangle{
+            id:rec_right1
+            anchors.top: parent.top
+            anchors.topMargin: 200
+            anchors.left: parent.left
+            anchors.bottom: but2.bottom
+            anchors.right: parent.right
+            ListView {
+                id:lst_view
+                anchors.fill: parent
+                spacing: 10
+                model: signup_model
+            }
+        }
         DoubleButton{
+            id:but2
             width:200
             height: 20
             anchors.bottom: parent.bottom
@@ -59,6 +105,6 @@ Rectangle {
                 exit_()
             }
         }
-    }
+    }*/
 
 }

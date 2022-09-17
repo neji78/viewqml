@@ -8,22 +8,46 @@ Rectangle {
     property string leftButton: "تایید"
     signal rightButton_clicked;
     signal leftButton_clicked;
+    property string color_: ""
 
     RowLayout{
         anchors.fill: parent
-        Button{
+        spacing: 10
+        FontLoader { id: webFont; source:"qrc:/fonts/FFont/ReemKufiInk-Regular.ttf"}
+        Rectangle{
             id:right_button
-            Layout.preferredWidth: twoButton.width/2
+            Layout.preferredWidth: twoButton.width/2 - 10
             Layout.fillHeight: true
-            text: rightButton
-            onClicked: rightButton_clicked()
+            color: color_
+            Text{
+                anchors.centerIn: parent
+                text: rightButton
+                font.family: webFont.name
+                color:"white"
+            }
+            MouseArea{
+                anchors.fill:parent
+                hoverEnabled: true
+                onClicked: rightButton_clicked()
+            }
+
         }
-        Button{
+        Rectangle{
             id:left_button
-            Layout.preferredWidth: twoButton.width/2
+            Layout.preferredWidth: twoButton.width/2 - 10
             Layout.fillHeight: true
-            text: leftButton
-            onClicked: leftButton_clicked()
+            color: color_
+            Text{
+                anchors.centerIn: parent
+                text: leftButton
+                font.family: webFont.name
+                color:"white"
+            }
+            MouseArea{
+                anchors.fill:parent
+                hoverEnabled: true
+                onClicked: leftButton_clicked()
+            }
         }
     }
 

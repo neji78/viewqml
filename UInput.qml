@@ -3,21 +3,19 @@ import QtQuick.Layouts 1.2
 
 Rectangle {
     id:main_Rect
-    anchors.top: parent.top
     anchors.topMargin: 10
     anchors.right: parent.right
-    anchors.rightMargin: 10
-    height: 300
-    color: "red"
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
     signal sign_in
     signal sign_up
+
     Rectangle{
         id:fields_rect
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.topMargin: 5
-        color:"blue"
         height: parent.height - 90
         ColumnLayout{
             id:clay
@@ -28,8 +26,10 @@ Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 40
                 Layout.rightMargin: 10
-                label_text: "نام کاربری"
+                label_text: "نام مستعار"
                 place_text: "نام کاربری خود را وارد کنید."
+                color_:"#d65253"
+                color: "#d65253"
             }
             FText{
                 Layout.fillWidth: true
@@ -37,16 +37,22 @@ Rectangle {
                 Layout.rightMargin: 10
                 label_text: "رمز عبور"
                 place_text: "رمز عبور خود را وارد کنید."
+                color_:"#d65253"
+                color: "#d65253"
             }
         }
     }
     DoubleButton{
         anchors.top: fields_rect.bottom
+        anchors.topMargin: 25
         anchors.left: fields_rect.left
-        width: 200
-        height: 30
+        anchors.leftMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        height: 40
         rightButton: "ثبت نام"
         leftButton: "ورود"
+        color_:"#110642"
         onRightButton_clicked: sign_up()
         onLeftButton_clicked: sign_in()
 
